@@ -1,0 +1,31 @@
+{
+    "root":{
+    "type":"directory",
+    "children":{
+        "documents":{
+            "type":"directory",
+            "children":{
+                "resume.doc":{
+                    "type":"file"
+                },
+                "cover_latter.doc":{
+                    "type":"file"
+                }
+            }
+        },
+        
+        "Photos":{
+            "type":"directory",
+            "children":{
+                "photos.jpg":{
+                    "type":"file"
+                }
+            }
+        },
+
+        "notes.text":{
+            "type":"file"
+        }
+    }
+}
+}
