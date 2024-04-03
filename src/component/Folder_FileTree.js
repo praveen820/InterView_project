@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 
 const Folder_FileTree = () =>{
+    
     const [folders, setFolder] = useState([])
     const [currentFolder, setCurrentFolder] = useState('')
     const [currentFile, setCurrentFile] = useState('')
-
-    const handleFileInputChange =(e) =>{
-        setCurrentFile(e.target.value)
-    }
-
-    const handleFolderInputChange =(e) =>{
-        setCurrentFolder(e.target.value)
-    }
 
     const handleAddFolder = () =>{
         if(currentFolder.trim() !== ""){
@@ -47,24 +40,35 @@ const Folder_FileTree = () =>{
                                 </>)
                             })}
                             <li>
-                                <input 
-                                type="text"
-                                value={currentFile}
-                                onChange={handleFileInputChange}
-                                />
-                               <button onClick={()=>handleAddFile(index)}>Add File</button>
+                            <div className="form-inline">
+                                <div className="form-group mx-sm-3 mb-2">
+                                    <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    value={currentFile}
+                                    onChange={(e)=>setCurrentFile(e.target.value)} 
+                                    placeholder="Add File"/>
+                                </div>
+                                <button type="submit" className="btn btn-primary mb-2" onClick={()=>handleAddFile(index)}>Add File</button>
+                            </div>
                             </li>
                         </ul>
                     </li>
-                                </>)
+                </>)
                 })}
             </ul>
-            <input 
-                 type="text"
-                 value={currentFolder}
-                 onChange={handleFolderInputChange}
-                />
-               <button onClick={handleAddFolder}>Add Folder</button>
+
+            <div className="form-inline">
+                <div className="form-group mx-sm-3 mb-2">
+                    <input 
+                    type="text" 
+                    className="form-control"  
+                    value={currentFolder}  
+                    onChange={(e)=>setCurrentFolder(e.target.value)}
+                    placeholder="Add Folder"/>
+                </div>
+                <button type="submit" className="btn btn-primary mb-2" onClick={handleAddFolder}>Add Folder</button>
+            </div>
         </div>
     )
 }

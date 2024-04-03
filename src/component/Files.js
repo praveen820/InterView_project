@@ -17,9 +17,9 @@ const Files =() =>{
         <div>
             <h5>Files</h5>
             <FileExplorer
-            fileData={currentPath}
-            data={getPathData(currentPath)}
-            navigate={navigate}
+             fileData={currentPath}
+             data={getPathData(currentPath)}
+             navigate={navigate}
             />
         </div>
         </>

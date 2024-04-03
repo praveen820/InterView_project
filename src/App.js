@@ -3,7 +3,7 @@ import Files from './component/Files';
 
 function App() {
   return (
-    <div style={{textAlign: "center"}}>
+    <div style={{textAlign: "center", marginTop:"20px"}}>
       <h3> Create File Explorer</h3>
       <Files/>
       

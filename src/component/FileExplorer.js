@@ -13,20 +13,18 @@ const FileExplorer =({data}) => {
 
     return(
     <div className="main-container">
-            <Folder_FileTree/>
+        <Folder_FileTree/>
+        &nbsp;&nbsp;
         <ul>
-            <span>
-            </span>&nbsp;
             {entries?.map(([key, value])=>{
                 return(
                     <>
                         <li key={key} onClick={()=> value?.type === 'directory' }>
-                        <input type="file" onChange={handleFileChange}/>
-                        {value?.type === 'directory' ? "Folder" : "file"} {key}
+                            <input type="file" onChange={handleFileChange}/>
+                            {value?.type === 'directory' ? "Folder" : "file"} {key}
                         </li>
                     </>
                 )
-                
             })}
         </ul>
     </div>
