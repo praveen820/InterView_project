@@ -13,8 +13,8 @@ const FileExplorer =({data}) => {
 
     return(
     <div className="main-container">
-        <ul>
             <Folder_FileTree/>
+        <ul>
             <span>
             </span>&nbsp;
             {entries?.map(([key, value])=>{

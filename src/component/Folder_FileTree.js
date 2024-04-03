@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const Folder_FileTree = () =>{
     const [folders, setFolder] = useState([])
     const [currentFolder, setCurrentFolder] = useState('')
-    console.log("🚀 ~ currentFolder:", currentFolder)
     const [currentFile, setCurrentFile] = useState('')
 
     const handleFileInputChange =(e) =>{
@@ -26,7 +25,7 @@ const Folder_FileTree = () =>{
             const updatedFolder = [...folders];
             updatedFolder[folderIndex]?.files?.push(currentFile)
             setFolder(updatedFolder)
-            setCurrentFile("")
+            setCurrentFile('')
         }
     }
 
@@ -35,11 +34,17 @@ const Folder_FileTree = () =>{
             <h2>Folder</h2>
             <ul>
                 {folders.map((folder, index)=>{
+                    return(
+                    <>
                     <li key={index}>
-                        {folder.name}
+                        <b>
+                            {folder.name}
+                        </b>
                         <ul>
                             {folder?.files?.map((file, fileIndex)=>{
+                                return(<>
                                 <li key={fileIndex}>{file}</li>
+                                </>)
                             })}
                             <li>
                                 <input 
@@ -51,6 +56,7 @@ const Folder_FileTree = () =>{
                             </li>
                         </ul>
                     </li>
+                                </>)
                 })}
             </ul>
             <input 
